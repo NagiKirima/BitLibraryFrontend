@@ -23,18 +23,18 @@ export default {
     mutations: {
         setApiKey(state, api_key) {
             state.credentials.api_key = api_key;
-            state.credentials.is_auth = true
-            localStorage.setItem('api_key', api_key)
-            privateApiInstance.defaults.headers['Api-Key'] = `api_key`
+            state.credentials.is_auth = true;
+            localStorage.setItem('api_key', api_key);
+            privateApiInstance.defaults.headers['Api-Key'] = api_key;
         },
 
         deleteApiKey(state) {
-            state.credentials.api_key = null
-            state.credentials.is_auth = false
+            state.credentials.api_key = null;
+            state.credentials.is_auth = false;
 
-            localStorage.removeItem('api_key')
+            localStorage.removeItem('api_key');
 
-            delete privateApiInstance.defaults.headers['Api-Key']
+            delete privateApiInstance.defaults.headers['Api-Key'];
         },
     },
 

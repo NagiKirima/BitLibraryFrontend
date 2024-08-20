@@ -1,11 +1,10 @@
 {
-  "name": "vk-app",
+  "name": "library",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "vk-miniapps-deploy",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"

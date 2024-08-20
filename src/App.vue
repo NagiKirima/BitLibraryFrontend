@@ -1,10 +1,5 @@
 <template>
   <div>
-    <header class="d-flex justify-content-between align-items-center p-3 border-bottom">
-      <div class="logo">
-        <img src="/public/vite.svg">
-      </div>
-    </header>
     <router-view></router-view>
   </div>
 </template>

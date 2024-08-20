@@ -1,39 +1,39 @@
 <template>
-    <div class="modal fade" :id="idModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Error</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="this.closeModal"></button>
-          </div>
-          <div class="modal-body">
-            {{ errorMessage }}
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="closeModal">Close</button>
-          </div>
+  <div class="modal fade" :id="idModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Error</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="this.closeModal"></button>
+        </div>
+        <div class="modal-body">
+          {{ errorMessage }}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="closeModal">Close</button>
         </div>
       </div>
     </div>
-  </template>
+  </div>
+</template>
     
-  <script>
-  import { defineComponent } from 'vue';
+<script>
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'ErrorModalComponent',
+  props: {
+      idModal: String,
+      errorMessage: String
+  },
+  methods: {
+      closeModal() {
+        this.$emit('close');
+      }
+  }
+});
+</script>
   
-  export default defineComponent({
-    name: 'ErrorModalComponent',
-    props: {
-        idModal: String,
-        errorMessage: String
-    },
-    methods: {
-        closeModal() {
-          this.$emit('close');
-        }
-    }
-  });
-  </script>
-  
-  <style>
-  </style>
+<style>
+</style>
     
